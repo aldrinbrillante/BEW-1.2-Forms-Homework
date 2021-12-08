@@ -77,9 +77,10 @@ def store_detail(store_id):
     # - update the GroceryStore object and save it to the database,
     # - flash a success message, and
     # - redirect the user to the store detail page.
-
+    if form.validate_on_submit():
+        store.title = 
+        store.address = 
     # TODO: Send the form to the template and use it to render the form fields
-    store = GroceryStore.query.get(store_id)
     return render_template('store_detail.html', store=store)
 
 @main.route('/item/<item_id>', methods=['GET', 'POST'])
